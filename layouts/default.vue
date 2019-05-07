@@ -1,6 +1,6 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
+  <v-app>
+    <!-- <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -56,13 +56,14 @@
       >
         <v-icon>menu</v-icon>
       </v-btn>
-    </v-toolbar>
+    </v-toolbar> -->
+    <app-header/>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
       temporary
@@ -82,11 +83,13 @@
       app
     >
       <span>&copy; 2019</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 
 <script>
+import Header from '../components/Hearder'
+
 export default {
   data() {
     return {
@@ -110,6 +113,9 @@ export default {
       rightDrawer: false,
       title: 'Vuetify.js'
     }
+  },
+  components: {
+    'app-header': Header
   }
 }
 </script>
